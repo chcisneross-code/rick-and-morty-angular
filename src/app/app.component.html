@@ -1,0 +1,54 @@
+<div class="container mt-4">
+
+  <h1 class="text-center text-success mb-4">
+    Rick and Morty Characters
+  </h1>
+
+  <!-- BUSCADOR -->
+  <div class="row mb-4">
+    <div class="col-md-6 mx-auto">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Buscar personaje..."
+        [(ngModel)]="searchName"
+        (keyup)="loadCharacters()"
+      >
+    </div>
+  </div>
+
+  <!-- TARJETAS -->
+  <div class="row">
+
+    <div class="col-md-4 mb-4" *ngFor="let character of characters">
+
+      <div class="card h-100 shadow">
+
+        <img
+          [src]="character.image"
+          class="card-img-top"
+        >
+
+        <div class="card-body">
+
+          <h5 class="card-title">
+            {{ character.name }}
+          </h5>
+
+          <p class="card-text">
+            <strong>Estado:</strong> {{ character.status }}
+          </p>
+
+          <p class="card-text">
+            <strong>Especie:</strong> {{ character.species }}
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
